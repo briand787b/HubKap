@@ -3,7 +3,7 @@
 //# You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(function() {
-  if ($("#answer_tbl").length > 0) {
+  if ($("#central_hub").length > 0) {
     var x = $("#answer_tbl").length; //console.log($("#answer_tbl").length);
     console.log(x);
     console.log("I am in the function on home.js");
