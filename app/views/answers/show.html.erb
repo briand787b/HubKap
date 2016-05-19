@@ -26,5 +26,5 @@
 	<div id="terminator">
 		<%= button_to "Terminate Question", question_path(@answer.question), method: :delete %>
 	</div>
+	<a href="skype:<%= @answer.user.skype_username %>?call">Call <%= @answer.user.username %></a>
 <% end %>
-<a href="skype:<%= @answer.user.skype_username %>?call">Call <%= @answer.user.username %></a>

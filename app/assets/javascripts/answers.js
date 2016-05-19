@@ -17,19 +17,21 @@ function updateComments () {
 }
 
 function hideButtons(){
-	var answer_active = $('#timer_btn').attr("data-id");
-	console.log(answer_active);
-	if (answer_active === "true") {
-		console.log("answer_active === true");
-		document.getElementById("start_timer").style.display = 'none';
-		document.getElementById("end_timer").style.display = 'block';
-		document.getElementById("terminator").style.display = 'none';
-		//document.getElementById("start_timer").setAttribute("hidden", true);
-		//document.getElementById("end_timer").setAttribute("hidden", true);
-	} else {
-		document.getElementById("start_timer").style.display = 'block';
-		document.getElementById("end_timer").style.display = 'none';
-		//document.getElementById("start_timer").setAttribute("hidden", false);
-		//document.getElementById("end_timer").setAttribute("hidden", true);
+	if (document.getElementById("start_timer")){
+		var answer_active = $('#timer_btn').attr("data-id");
+		console.log(answer_active);
+		if (answer_active === "true") {
+			console.log("answer_active === true");
+			document.getElementById("start_timer").style.display = 'none';
+			document.getElementById("end_timer").style.display = 'block';
+			document.getElementById("terminator").style.display = 'none';
+			//document.getElementById("start_timer").setAttribute("hidden", true);
+			//document.getElementById("end_timer").setAttribute("hidden", true);
+		} else {
+			document.getElementById("start_timer").style.display = 'block';
+			document.getElementById("end_timer").style.display = 'none';
+			//document.getElementById("start_timer").setAttribute("hidden", false);
+			//document.getElementById("end_timer").setAttribute("hidden", true);
+		}
 	}
 }
