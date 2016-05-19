@@ -2,4 +2,8 @@
 	$("#modal_div").html("<%= escape_javascript render('modal', locals: {answer: @answer}) %>");
 	$('#myModal').modal('toggle')
 	console.log("Modal button isn't working if this shows up and modal doesn't");
+<% elsif @questions %>
+	<% @questions.each do |q| %>
+		$("#question_table").prepend("<%= escape_javascript render(q) %>");
+	<% end %>
 <% end %>

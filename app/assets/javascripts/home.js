@@ -4,14 +4,15 @@
 
 $(function() {
   if ($("#answer_tbl").length > 0) {
-  	var x = $("#answer_tbl").length; //console.log($("#answer_tbl").length);
-  	console.log(x);
-  	console.log("I am in the function on home.js");
+    var x = $("#answer_tbl").length; //console.log($("#answer_tbl").length);
+    console.log(x);
+    console.log("I am in the function on home.js");
     setTimeout(updateModal, 10000);
-  }
+  } 
 });
 
-function updateModal () {
+
+function updateModal() {
 	//console.log("Ajax is working from home.js")
 
 	var user_id = $("#answer_tbl").attr("data-id");

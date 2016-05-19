@@ -22,6 +22,7 @@ class HomeController < ApplicationController
 
   def alert_user
     @answer = Answer.check_acceptance current_user
+    @questions = Question.since_refresh
   end
 
   private

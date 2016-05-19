@@ -24,4 +24,10 @@ class Question < ActiveRecord::Base
 		arr = Question.where("created_at > ? and answered = ?", time_limit, false)
 	end
 
+	def self.since_refresh
+		arr = Array.new
+		refresh = Time.now - 10
+		arr = Question.where("created_at > ? and answered = ?", refresh, false)
+	end
+
 end
