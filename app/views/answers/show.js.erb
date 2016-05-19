@@ -1,0 +1,9 @@
+console.log("Ajax is still working for answer#<%= @answer.id %>");
+
+<% if @answer.active %>
+	document.getElementById('activity').innerHTML = "Active";
+	document.getElementById('activity').style.backgroundColor = "green";
+<% else %>
+	document.getElementById('activity').innerHTML = "Inactive";
+	document.getElementById('activity').style.backgroundColor = "red";
+<% end %>

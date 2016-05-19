@@ -1,0 +1,42 @@
+document.getElementById("start_timer").style.display = 'none';
+document.getElementById("end_timer").style.display = 'block';
+document.getElementById('activity').innerHTML = "Active";
+document.getElementById('activity').style.backgroundColor = "green";
+
+// var x = document.getElementById('timer_btn'); //.innerHTML = 
+// console.log("timer_btn is ");
+// console.log(x);
+// console.log("timer_btn's firstChild is ");
+// console.log(x.firstChild);
+// console.log("timer_btn's firstChild has a nextSibling of ");
+// console.log(x.firstChild.nextSibling);
+
+// console.log(x.removeChild(x.firstChild.nextSibling));
+// console.log(<%= @answer.id %>);
+
+// var btn = document.createElement("div");
+// var anch = document.createElement("a");
+// var txt = document.createTextNode("End");
+
+// btn.className = "btn btn-danger";
+// btn.id = "end_timer";
+
+// anch.setAttribute('href', "/end.js?answer_id=" + "<%= @answer.id %>");
+// anch.rel = "nofollow";
+// anch.dataRemote = "true";
+// //anch.dataMethod = "patch";
+
+// anch.appendChild(txt);
+// btn.appendChild(anch);
+// x.appendChild(btn);
+
+//#####################################################################
+
+//<a data-remote="true" rel="nofollow" data-method="patch" href="/start?answer_id=4">Start</a>
+
+//console.log(<%= link_to "End", end_path(answer_id: @answer.id), method: :patch, remote: true %>);
+
+//console.log(x.appendChild( <%= link_to "End", end_path(answer_id: @answer.id), method: :patch, remote: true %> ));
+
+
+//<%= link_to "End", end_path(answer_id: @answer.id), method: :patch, remote: true %>;

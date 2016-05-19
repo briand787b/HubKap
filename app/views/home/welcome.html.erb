@@ -1,0 +1,20 @@
+<h1>Welcome to HubKap</h1>
+<h3>Find the solution or explanation you don't have the time to search for yourself</h3>
+<h3>Make money while you study</h3>
+<% if !user_signed_in? %>
+	<div class="btn btn-success"><%= link_to "Sign in", new_user_session_path %></div>
+	<div class="btn btn-primary"><%= link_to "Sign up", new_user_registration_path %></div>
+<% else %>
+	<div class="btn btn-primary"><%= link_to "Continue to HubKap", main_path %></div>
+<% end %>
+
+
+
+
+
+
+<!-- Stuff below will be reused for other pages, no need for it on this page-->
+<% if user_signed_in? %>
+	<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+	<%= link_to "Edit Profile", edit_user_registration_path %>
+<% end %>

@@ -1,0 +1,30 @@
+<h1>Here's  
+	<% if current_user.id == @answer.question.user_id %>
+		Your Answer
+	<% else %> 
+		The Question You're Responding To
+	<% end %>
+</h1>
+<p>Call the user BEFORE you begin the timer.  This ensures that you are not paying a user who is not ready to give you an answer.  You will be billed a flat rate for every 10 seconds the timer is running</p>
+
+<div id="activity" data-id="<%= @answer.id%>">
+	<% if @answer.active %>
+		<p style="background-color:green;">Active</p>
+	<% else %>
+		<p style="background-color:red;">Inactive</p>
+	<% end %>
+</div>
+<% if @answer.question.user_id == current_user.id %>
+	<div id="timer_btn" data-id="<%= @answer.active %>">
+		<div class="btn btn-success" id="start_timer">
+			<%= link_to "Start", start_path(answer_id: @answer.id), remote: true %> 
+		</div>
+		<div class="btn btn-danger" id="end_timer">
+			<%= link_to "End", end_path(answer_id: @answer.id), remote: true %>
+		</div>
+	</div>
+	<div id="terminator">
+		<%= button_to "Terminate Question", question_path(@answer.question), method: :delete %>
+	</div>
+<% end %>
+<a href="skype:<%= @answer.user.skype_username %>?call">Call <%= @answer.user.username %></a>

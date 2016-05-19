@@ -1,0 +1,67 @@
+<% if flash[:notice] %>
+	<div class="row">
+		<p><%= flash[:notice] %></p>
+	</div>
+<% end %>
+<div class="row">
+	<h1>Central Hub</h1>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<div class="row">	
+			<div class="well">
+				<h3>Ask a Question</h3>
+				<button><%= link_to 'Ask', new_question_path %></button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="well">
+				<h3>Pending Answers</h3>
+				<% if @answers.size > 0 %>	
+					<table class="table" id="answer_tbl" data-id="<%= @answers[0].user_id %>">
+						<thead>
+							<tr>
+								<th>User</th>
+								<th>Minutes Ago</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @answers.each do |a| %>
+								<tr>
+									<td><%= a.question.user.username %></td>
+									<td><%= a.created_at %></td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<h2>Questions to Answer</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Question</th>
+					<th>Subject</th>
+					<th>Level</th>
+					<th>Option</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @questions.each do |q| %>
+					<tr>
+						<td><%= q.title %></td>
+						<td><%= q.topic %></td>
+						<td><%= q.difficulty %></td>
+						<td><%= link_to 'Show', q %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div id="modal_div">
+
+</div>

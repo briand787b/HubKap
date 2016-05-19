@@ -1,0 +1,44 @@
+<h1>Question #<%= @question.id %> Full Description</h1>
+<% if !@question.answered %>
+	<div class="btn btn-success">Still Needs Answer</div> 
+<% else %>
+	<div class="btn btn-danger">Question has been answered</div>
+<% end %>
+<h3><%= @question.title %></h3>
+<%= @question.body %><br /><br />
+<% if @question.user_id != current_user.id %>
+	<button><%= link_to 'Answer this Question', answers_path(question_id: @question.id), method: :post %></button>
+<% else %>
+	<button><%= link_to 'Edit your Question', root_path %></button><br /> <!--Not functional yet -->
+	<button><%= link_to 'Delete Question', root_path %></button> <!-- Not operational yet either -->
+<% end %>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<h2>Pending Answers</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Rating</th>
+					<th>Minutes Ago</th>
+					<th>Option</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% if @answers %>
+				<% @answers.each do |a| %>
+					<tr>
+						<td><%= a.user.username %></td>
+						<td><%= a.user.avg_rating %></td>
+						<td><%= a.created_at %></td>
+						<% if @question.user_id == current_user.id %>
+							<td><%= link_to 'Accept', answer_path(answer_id: a.id, question_id: @question.id), method: :patch %></td>
+						<% end %>
+					</tr>		
+				<% end %>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

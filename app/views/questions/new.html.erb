@@ -1,0 +1,39 @@
+<div class="row">
+	<h1>New Question</h1>
+</div>
+<div class="row">
+	<%= form_for @question do |f| %>
+		<div class="col-md-9">
+			<div class="row">
+				<div class="field">
+					<%= f.label :title %><br />
+					<%= f.text_field :title %>
+				</div>
+				<div class="field">
+					<%= f.label :body %><br />
+					<%= f.text_area :body %>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="row">
+				<div class="field">
+					<%= f.label :topic %>
+					<%= f.select(:topic, QuestionsHelper::TOPICS) %>
+				</div>
+				<div class="row">
+					<div class="field">
+						<%= f.label :difficulty %>
+						<%= f.select(:difficulty, QuestionsHelper::DIFFICULTY_LEVEL) %>
+					</div>
+				</div>
+				<div class="row">
+					<%= f.hidden_field :user_id, value: current_user.id %>
+					<div class="action">
+						<%= f.submit %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
