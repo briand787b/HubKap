@@ -5,7 +5,7 @@
 $(function() {
   if ($("#activity").length > 0) {
   	hideButtons();
-    setTimeout(updateComments, 10000);
+    setTimeout(updateComments, 1000);
   }
 });
 
@@ -13,7 +13,7 @@ function updateComments () {
 	var answer_id = $("#activity").attr("data-id");
 	//var
 	$.getScript("/answers/" + answer_id + ".js")
-	setTimeout(updateComments, 10000)
+	setTimeout(updateComments, 1000)
 }
 
 function hideButtons(){
