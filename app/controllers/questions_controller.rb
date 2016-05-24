@@ -23,6 +23,10 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def index
+    @questions = Question.where("user_id = ?", current_user.id)
+  end
+
   def update
   	#To update 'answered' attribute for when the question asker either goes 'Back to Home' or 'Back to Answers'
   	#'Back to Home' causes 'answered' attribute to become 'true' in this action

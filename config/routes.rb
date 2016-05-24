@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'start' => 'answers#start_timer'
   get 'end' => 'answers#end_timer'
 
-  resources :questions, :only => [:new, :show, :create, :update, :destroy]
-  resources :answers, :only => [:show, :index, :create, :update, :destroy]  
+  resources :questions
+  resources :answers, :except => [:edit]  
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

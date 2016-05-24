@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
   def index
   	#Shows all answers specific to one question
+    @answers = Answer.where("user_id = ?", current_user.id)
   end
 
   def destroy

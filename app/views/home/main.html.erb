@@ -21,15 +21,13 @@
 					<table class="table" id="answer_tbl" data-id="<%= @answers[0].user_id %>">
 						<thead>
 							<tr>
-								<th>User</th>
-								<th>Minutes Ago</th>
+								<th>Question</th>
 							</tr>
 						</thead>
 						<tbody>
 							<% @answers.each do |a| %>
 								<tr>
-									<td><%= a.question.user.username %></td>
-									<td><%= a.created_at %></td>
+									<td><%= a.question.title %></td>
 								</tr>
 							<% end %>
 						</tbody>

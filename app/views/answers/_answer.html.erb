@@ -1,0 +1,19 @@
+<tr>
+	<td>
+ 		<% if answer.accepted %>
+ 			Accepted
+ 		<% else %>
+ 			Pending
+ 		<% end %>
+ 	</td>
+ 	<td><%= "#{answer.duration} seconds" %></td>
+ 	<td><%= answer.created_at %></td>
+ 	<td><%= answer.question.body %></td>
+ 	<td>
+ 		<% if answer.question.answered %>
+ 			Answered	
+ 		<% else %>
+ 			Not Answered
+ 		<% end %>
+ 	</td> 	
+</tr>
