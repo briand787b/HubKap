@@ -1,13 +1,18 @@
-<h2>Your Answers</h2>
-<table class="table">
-	<thead>
-		<th>Answer Status</th>
-		<th>Duration</th>
-		<th>Date</th>
-		<th>Question</th>
-		<th>Question Status</th>
-	</thead>
-	<tbody>
-		<%= render @answers %>
-	</tbody>
-</table>
+<div id="answer-index-header">
+	<h2>Your Answers</h2>
+</div>
+<div id="answer-index-table">	
+	<table class="table">
+		<thead>
+			<th>Answer Status</th>
+			<th>Duration</th>
+			<th>Date</th>
+			<th>Question</th>
+			<th>Question Status</th>
+			<th>Show</th>
+		</thead>
+		<tbody>
+			<%= render @answers %>
+		</tbody>
+	</table>
+</div>

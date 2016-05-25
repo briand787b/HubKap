@@ -15,3 +15,65 @@
  */
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@font-face {
+  font-family: "gonjuring";
+  src: font-url("gonjuring.ttf") format("truetype");
+}
+@font-face {
+	font-family: "arkhip";
+	src: font-url("arkhip.ttf") format("truetype");
+}
+
+body {
+	color: white;
+	text-align: center;
+	/*background-color: black;*/
+	background-color: #660066;
+}
+
+a {
+	color: white;
+}
+
+a:hover {
+	color: #33cc33;
+	text-decoration: none;
+}
+
+.container {
+	border: solid;
+	border-color: #999999;
+	min-height: 500px;
+	background-color: #cccccc;
+	border-radius: 10px;
+}
+
+.btn {
+	background-color: black;
+	/*background-color: #33cc33;*/
+	color: white;
+	border-color: gray;
+	.sign-out {
+		background-color: white;
+	}
+}
+
+.btn:hover {
+	color: green;
+}
+
+.table {
+	color: black;
+}
+
+h2 {
+	color: black;
+}
+
+input {
+	color: black;
+}
+
+.navbar-header {
+	font-family: "arkhip";
+}

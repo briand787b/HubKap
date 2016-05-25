@@ -1,3 +1,100 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new-question-box {
+	padding: 5px;
+	font-weight: bold;
+}
+
+#question-submit-box {
+	border-color: white;
+	border-bottom-color: gray;
+	padding-top: 10px;
+	color: black;
+	label {
+		color: white;
+	}
+}
+
+
+#new-question-header {
+	background-color: black;
+	/*background-color: #660066;*/
+	font-weight: bold;
+	font-family: "arkhip";
+	height: 100px;
+	border-style: solid;
+	border-bottom-color: gray;
+	border-radius: 10px;
+}
+
+#show-question-header {
+	background-color: black;
+	/*background-color: #660066;*/
+	font-weight: bold;
+	font-family: "arkhip";
+	height: 100px;
+	border-style: solid;
+	border-bottom-color: gray;
+	border-radius: 10px;	
+}
+
+#unanswered-pill {
+	margin-top: 7px;
+	background-color: green;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: black;
+}
+
+#answered-pill {
+	margin-top: 7px;
+	background-color: red;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: black;	
+}
+
+#question-window {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-color: black;
+	border-style: solid;
+	border-radius: 10px;
+	border-bottom-color: gray;
+	padding-bottom: 5px;
+}
+
+#send-answer-request-btn {
+	background-color: green;
+	border-width: 3px;
+	border-style: solid;
+	border-bottom-color: black;
+}
+
+#send-answer-request-btn:hover {
+	color: #cccccc;
+}
+
+#question-index-header {
+	background-color: black;
+	font-weight: bold;
+	font-family: "arkhip";
+	height: 100px;
+	border-style: solid;
+	border-bottom-color: gray;
+	border-radius: 10px;
+	h2 {
+		color: white;
+	}
+}
+
+#question-index-table {
+	th {
+			text-align: center;
+		}
+		td {
+			text-align: center;
+		}
+}

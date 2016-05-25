@@ -1,20 +1,10 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">Someone accepted your answer</h4>
-      </div>
-      <div class="modal-body">
-        Click on this link to confirm acceptance <a href="#">LINK</a>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary"><%= link_to 'Decline', @answer, method: :delete %></button>
-        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Decline</button>-->
-        <span class="btn btn-primary"><%= link_to "Accept", @answer %></span>
-      </div>
+        <h4 class="modal-title" id="myModalLabel">Someone accepted your answer</h4><br />
+        
+        <span><%= link_to 'Decline', @answer, method: :delete, class: "btn", id: "modal-decline" %></span>
+        <span><%= link_to "Accept", @answer, class: "btn", id: "modal-accept" %></span>
     </div>
   </div>
 </div>

@@ -1,14 +1,18 @@
-<h2>Your Questions</h2>
-<table class="table">
-			<thead>
-				<tr>
-					<th>Question</th>
-					<th>Subject</th>
-					<th>Level</th>
-					<th>Option</th>
-				</tr>
-			</thead>
-			<tbody id="question_table">
-				<%= render @questions %>
-			</tbody>
-		</table>
+<div id="question-index-header">
+	<h2>Your Questions</h2>
+</div>
+<div id="question-index-table">	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Question</th>
+				<th>Subject</th>
+				<th>Level</th>
+				<th>Option</th>
+			</tr>
+		</thead>
+		<tbody id="question_table">
+			<%= render @questions %>
+		</tbody>
+	</table>
+</div>

@@ -1,27 +1,27 @@
 <% if flash[:notice] %>
-	<div class="row">
+	<div id="notice-bar" class="row">
 		<p><%= flash[:notice] %></p>
 	</div>
 <% end %>
-<div class="row">
+<div id="main-header" class="row">
 	<h1 id="central_hub">Central Hub</h1>
 </div>
 <div class="row">
 	<div class="col-md-3">
 		<div class="row">	
-			<div class="well">
+			<div class="main-window">
 				<h3>Ask a Question</h3>
-				<button><%= link_to 'Ask', new_question_path %></button>
+				<div><%= link_to 'Ask', new_question_path, class: "btn" %></div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="well">
+			<div class="main-window">
 				<h3>Pending Answers</h3>
 				<% if @answers.size > 0 %>	
-					<table class="table" id="answer_tbl" data-id="<%= @answers[0].user_id %>">
+					<table class="table" id="answer-tbl" data-id="<%= @answers[0].user_id %>">
 						<thead>
 							<tr>
-								<th>Question</th>
+								<td>Questions</td>
 							</tr>
 						</thead>
 						<tbody>
@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	<div class="col-md-9">
-		<h2>Questions to Answer</h2>
+		<h2 id="question-table-header">Questions to Answer</h2>
 		<table class="table">
 			<thead>
 				<tr>

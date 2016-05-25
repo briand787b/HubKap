@@ -1,20 +1,26 @@
-<h1>Welcome to HubKap</h1>
-<h3>Find the solution or explanation you don't have the time to search for yourself</h3>
-<h3>Make money while you study</h3>
-<% if !user_signed_in? %>
-	<div class="btn btn-success"><%= link_to "Sign in", new_user_session_path %></div>
-	<div class="btn btn-primary"><%= link_to "Sign up", new_user_registration_path %></div>
-<% else %>
-	<div class="btn btn-primary"><%= link_to "Continue to HubKap", main_path %></div>
+<% if flash[:notice] %>
+	<div id="notice-bar" class="row">
+		<p><%= flash[:notice] %></p>
+	</div>
 <% end %>
-
-
-
-
-
-
-<!-- Stuff below will be reused for other pages, no need for it on this page-->
-<% if user_signed_in? %>
-	<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-	<%= link_to "Edit Profile", edit_user_registration_path %>
-<% end %>
+<div id="welcome-header" class="row">
+	<div id="welcome-txt" class="col-md-6 col-md-offset-3">
+		<h1>Welcome to HubKap</h1>
+	</div>
+</div>
+<div id="welcome-body">
+	<br />
+	<h3>Your Hub for time-sensitive questions</h3>
+	<% if !user_signed_in? %>
+		<div class="row">
+			<%= link_to "Sign in", new_user_session_path, class: "btn btn-lg" %>
+			<%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg" %>
+		</div>
+	<% end %>
+	<br />
+	<br />
+	<br />
+	<% if user_signed_in? %>
+		<div><%= link_to "Continue to HubKap", main_path, class: "btn btn-lg" %></div>
+	<% end %>
+</div>
