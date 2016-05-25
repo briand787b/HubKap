@@ -37,8 +37,10 @@ function startCount(){
 	var start = new Date();
 	console.log("Inside startCount");
 
-	setInterval(function(){
+	var refreshId = setInterval(function(){
 		console.log($('#timer_btn').attr('data-id'));
 		$('.Timer').text(Math.round((new Date() - start) / 1000));
 	}, 1000);
+
+	return refreshId
 }
