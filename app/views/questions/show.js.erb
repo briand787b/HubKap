@@ -1,6 +1,6 @@
 console.log("This is the question i'm responding to <%= @question.id %>");
 <% if @answers.size > 0 %>
-	console.log("these are the answers that are passed here");
-<% else %>
-	console.log("there are no new answers");
+	<% @answers.each do |a| %>
+		$("#pending_answer_table").append("<%= escape_javascript render(a) %>");
+	<% end %>
 <% end %>
