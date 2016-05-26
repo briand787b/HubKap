@@ -1,4 +1,4 @@
-<div id="show-question-header" class="row">
+<div id="show-question-header" class="row" data-id="<%= @question.id %>">
 	<h1>Question #<%= @question.id %></h1>
 </div>
 <div class="row">
@@ -24,7 +24,7 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<h2>Pending Answers</h2>
-		<table class="table">
+		<table id="pending-answer-table" class="table">
 			<thead>
 				<tr>
 					<th>User</th>
@@ -34,18 +34,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% if @answers %>
-				<% @answers.each do |a| %>
-					<tr>
-						<td><%= a.user.username %></td>
-						<td><%= a.user.avg_rating %></td>
-						<td><%= a.created_at %></td>
-						<% if @question.user_id == current_user.id %>
-							<td><%= link_to 'Accept', answer_path(answer_id: a.id, question_id: @question.id), method: :patch %></td>
-						<% end %>
-					</tr>		
-				<% end %>
-				<% end %>
+				<%= render @answers %>
 			</tbody>
 		</table>
 	</div>

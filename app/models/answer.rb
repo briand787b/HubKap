@@ -2,6 +2,16 @@ class Answer < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :question
 
+	def minutes_ago 
+		return ((Time.now - self.created_at) / 60).floor
+	end
+
+	def self.recent_to_question question
+		return_arr = Array.new
+		time_limit = Time.now - 10 #10 seconds for question/show, 1800 for home/main
+		return_arr = Answer.where(["created_at > ? and question_id = ?", time_limit, question.id])
+	end
+
 	def self.from_user user
 		return_arr = Array.new
 		time_limit = Time.now - 1800

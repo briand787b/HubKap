@@ -8,7 +8,15 @@ class QuestionsController < ApplicationController
   	#Necessary because only a portion of large questions will be shown on Main Page
     #Look at full question before user decides if he wants to answer it
   	@question = Question.find(params[:id])
-    @answers = Answer.to_question @question
+
+    respond_to do |format|
+      format.html do 
+        @answers = Answer.to_question @question
+      end
+      format.js do 
+        @answers = Answer.recent_to_question @question
+      end
+    end
   end
 
   def create
@@ -19,7 +27,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to @question
     else
-      redirect_to root_path
+      render :new
     end
   end
 

@@ -1,20 +1,10 @@
 <tr>
-	<td>
- 		<% if answer.accepted %>
- 			Accepted
- 		<% else %>
- 			Pending
+	<td><%= answer.user.username %></td>
+ 	<td><%= answer.user.avg_rating %></td>
+ 	<td><%= answer.minutes_ago %></td>
+ 	<td>
+ 		<% if answer.question.user_id == current_user.id %>
+ 			<%= link_to 'Accept', answer_path(answer_id: answer.id, question_id: answer.question.id), method: :patch %>
  		<% end %>
  	</td>
- 	<td><%= "#{answer.duration} seconds" %></td>
- 	<td><%= answer.created_at %></td>
- 	<td><%= answer.question.body %></td>
- 	<td>
- 		<% if answer.question.answered %>
- 			Answered	
- 		<% else %>
- 			Not Answered
- 		<% end %>
- 	</td> 	
- 	<td><%= link_to 'show', answer_path(answer) %></td>
 </tr>

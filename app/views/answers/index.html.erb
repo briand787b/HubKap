@@ -12,7 +12,28 @@
 			<th>Show</th>
 		</thead>
 		<tbody>
-			<%= render @answers %>
+			<% @answers.each do |a| %>
+				<tr>
+					<td>
+				 		<% if a.accepted %>
+				 			Accepted
+				 		<% else %>
+				 			Pending
+				 		<% end %>
+				 	</td>
+				 	<td><%= "#{a.duration} seconds" %></td>
+				 	<td><%= a.created_at %></td>
+				 	<td><%= a.question.body %></td>
+				 	<td>
+				 		<% if a.question.answered %>
+				 			Answered	
+				 		<% else %>
+				 			Not Answered
+				 		<% end %>
+				 	</td> 	
+				 	<td><%= link_to 'show', answer_path(a) %></td>
+				</tr>
+			<% end %>
 		</tbody>
 	</table>
 </div>
