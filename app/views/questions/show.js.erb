@@ -1,7 +1,7 @@
 console.log("This is the question i'm responding to <%= @question.id %>");
 <% if @answers.size > 0 %>
 	console.log("The id of the answer is: <%= @answers.first.id %>");
-	$("#pending_answer_table").prepend("<%= escape_javascript render(@answers) %>");
+	$("#pending_answer_table").append("<%= render(@answers) %>");
 <% else %>
 	console.log("THIS BULLSHIT IS NOT WORKING")
 <% end %>
