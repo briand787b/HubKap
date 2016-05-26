@@ -1,6 +1,7 @@
 console.log("This is the question i'm responding to <%= @question.id %>");
 <% if @answers.size > 0 %>
 	<% @answers.each do |a| %>
+		console.log("FUCK THIS BULLSHIT WHY IS IT NOT WORKING");
 		$("#pending_answer_table").append("<%= escape_javascript render(a) %>");
 	<% end %>
 <% end %>
