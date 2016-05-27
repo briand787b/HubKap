@@ -44,7 +44,8 @@ class QuestionsController < ApplicationController
     #Rather than duplicate code to end the timer and log the duration here, i'll simply hide the 'terminate' button
     #while the timer is running
     question = Question.find(params[:id])
-    question.update(answered: true)
+    question.update!(answered: true)
+    flash[:notice] = "Question has been flagged as 'answered'.  It is no longer active."
     redirect_to main_path
   end
 
